@@ -39,6 +39,8 @@
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
+    [self buttonPressed:nil];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ (%.1f)", self.title, self.equivalentAlcoholAmount];
     [self.beerPercentTextField resignFirstResponder];
 }
 
@@ -56,6 +58,7 @@
     float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
     float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
     // decide whether to use "beer"/"beers" and "glass"/"glasses"
+    self.equivalentAlcoholAmount = numberOfWineGlassesForEquivalentAlcoholAmount;
     NSString *beerText;
     if (numberOfBeers == 1) {
         beerText = NSLocalizedString(@"beer", @"singular beer");

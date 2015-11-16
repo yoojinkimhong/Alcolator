@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *beerPercentTextField;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
+@property (nonatomic) float equivalentAlcoholAmount;
 
 - (void)buttonPressed:(UIButton *)sender;
 

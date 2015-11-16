@@ -17,7 +17,6 @@
 - (void)buttonPressed:(UIButton *)sender;
 {
     [self.beerPercentTextField resignFirstResponder];
-    
     int numberOfBeers = self.beerCountSlider.value;
     int ouncesInOneBeerGlass = 12;  //assume they are 12oz beer bottles
     
@@ -30,6 +29,7 @@
     
     float ouncesOfAlcoholPerWhiskeyGlass = ouncesInOneWhiskeyGlass * alcoholPercentageOfWhiskey;
     float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWhiskeyGlass;
+    self.equivalentAlcoholAmount = numberOfWhiskeyGlassesForEquivalentAlcoholAmount;
     
     NSString *beerText;
     
